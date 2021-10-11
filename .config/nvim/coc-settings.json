@@ -1,0 +1,18 @@
+{
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "erb"
+  ],
+  "solargraph.symbols": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true,
+  "solargraph.bundlerPath": "/Users/aaron/.rbenv/shims/bundle",
+  "html.format.indentInnerHtml": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html"
+  ],
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd"
+}
