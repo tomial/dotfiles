@@ -60,7 +60,7 @@ colorscheme aquarium
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "one"
+let g:airline_theme = "base16_aquarium_light"
 
 
 set number
