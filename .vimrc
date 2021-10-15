@@ -25,6 +25,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'arcticicestudio/nord-vim'
 
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
+
 " HTML live preview
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
@@ -49,10 +51,17 @@ syntax on
 set termguicolors 
 set background=dark
 let ayucolor="mirage"
-colorscheme ayu
+let g:aquarium_style="light"
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-let g:airline_theme = "ayu"
+colorscheme aquarium
+" let g:airline_theme = "ayu"
+" " options:
+"   base16_aquarium_light
+"   base16_aquarium_dark
+let g:airline_theme = "base16_aquarium_light"
+let g:aqua_bold = 1
+
 
 set number
 " set ttymouse=xterm2
