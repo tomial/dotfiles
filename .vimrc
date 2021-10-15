@@ -9,6 +9,8 @@ Plug 'tpope/vim-endwise'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
+Plug 'rakr/vim-one'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
@@ -24,8 +26,6 @@ Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'arcticicestudio/nord-vim'
-
-Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 
 " HTML live preview
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
@@ -49,18 +49,18 @@ set shiftwidth=2
 
 syntax on
 set termguicolors 
-set background=dark
+set background=light
 let ayucolor="mirage"
 let g:aquarium_style="light"
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
+let g:aqua_bold = 1
 colorscheme aquarium
 " let g:airline_theme = "ayu"
-" " options:
+" " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "base16_aquarium_light"
-let g:aqua_bold = 1
+let g:airline_theme = "one"
 
 
 set number
