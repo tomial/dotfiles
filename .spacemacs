@@ -43,7 +43,6 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     html
      lsp
      ;; markdown
      multiple-cursors
@@ -100,6 +99,7 @@ This function should only modify configuration layer settings."
   '((ruby :variables ruby-insert-encoding-magic-comment nil))
   (unicode-fonts :variables unicode-fonts-enable-ligatures t)
   (unicode-fonts :variables unicode-fonts-force-multi-color-on-mac t)
+  (treemacs :variables treemacs-use-all-the-icons-theme t)
   )
 
 (defun dotspacemacs/init ()
@@ -254,7 +254,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(all-the-icons :separator slant :separator-scale 1.6)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -554,7 +554,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 ;; java/c/c++
 (setq c-basic-offset 4)
 
-(setq configuration-layer--elpa-archives
+(setq configuration-layer-elpa-archives
       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
         ("org-cn"   . "http://elpa.emacs-china.org/org/")
         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
@@ -600,6 +600,7 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-paren-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
  '(package-selected-packages
    '(orgit-forge closql orgit org-rich-yank org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-contrib org org-cliplink helm-org-rifle gnuplot evil-org soft-morning-theme unicode-fonts ucs-utils font-utils persistent-soft pcache flatui-theme dap-mode bui yasnippet web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode htmlize simple-httpd helm-css-scss haml-mode emmet-mode counsel-css counsel swiper ivy company-web web-completion-data company add-node-modules-path ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection string-edit spaceline-all-the-icons restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
+ '(safe-local-variable-values '((encoding . utf-8)))
  '(sml/active-background-color "#34495e")
  '(sml/active-foreground-color "#ecf0f1")
  '(sml/inactive-background-color "#dfe4ea")
