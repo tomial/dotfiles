@@ -61,7 +61,7 @@ colorscheme purify
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "one"
+let g:airline_theme = "purify"
 
 
 set number
