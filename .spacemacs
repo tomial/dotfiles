@@ -554,10 +554,15 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 ;; java/c/c++
 (setq c-basic-offset 4)
 
+;; (setq configuration-layer-elpa-archives
+;;      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+
 (setq configuration-layer-elpa-archives
-      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-        ("org-cn"   . "http://elpa.emacs-china.org/org/")
-        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+      '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   )
 
 
