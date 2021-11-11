@@ -45,6 +45,9 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 
+autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
+
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
 
