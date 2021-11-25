@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      lsp
      ;; markdown
      multiple-cursors
+     yaml
 
      ruby
      ruby-on-rails
@@ -242,8 +243,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(junio
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         junio
                          farmhouse-dark
                          soft-morning
                          flatui
@@ -265,7 +266,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Lilex"
+   dotspacemacs-default-font '("Victor Mono"
                                :size 22.0
                                :weight normal
                                :width normal)
