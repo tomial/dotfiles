@@ -32,7 +32,13 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(javascript
+   '(
+     (javascript :variables javascript-backend 'lsp
+                 node-add-modules-path t
+                 js2-mode-show-strict-warnings nil
+                 javascript-fmt-tool 'prettier
+                 javascript-lsp-linter nil
+     )
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -63,6 +69,8 @@ This function should only modify configuration layer settings."
            html-enable-lsp t
            css-enable-lsp t
            web-fmt-tool 'prettier)
+
+     vue
 
      ;; spell-checking
      ;; syntax-checking
@@ -97,11 +105,17 @@ This function should only modify configuration layer settings."
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs-configuration-layers ()
-  '((ruby :variables ruby-version-manager 'rbenv))
-  '((ruby :variables ruby-insert-encoding-magic-comment nil))
+  '((ruby :variables ruby-version-manager 'rbenv
+          :variables ruby-insert-encoding-magic-comment nil
+          :variables ruby-backend 'lsp))
+
   (unicode-fonts :variables unicode-fonts-enable-ligatures t)
   (unicode-fonts :variables unicode-fonts-force-multi-color-on-mac t)
   (treemacs :variables treemacs-use-all-the-icons-theme t)
+  (node :variables node-add-modules-path t)
+  (vue :variables vue-backend 'lsp)
+  '((javascript :variables node-add-modules-path t
+                :variables js2-mode-show-strict-warnings nil))
   )
 
 (defun dotspacemacs/init ()
@@ -559,6 +573,11 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 ;; java/c/c++
 (setq c-basic-offset 4)
 
+(setq url-proxy-services
+      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+        ("http" . "127.0.0.1:7890")
+        ("https" . "127.0.0.1:7890")))
+
 ;; (setq configuration-layer-elpa-archives
 ;;      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
 ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
@@ -584,9 +603,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (spacemacs//set-monospaced-font   "Lilex" "Hiragino Sans GB" 22 20)
-  )
-
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
