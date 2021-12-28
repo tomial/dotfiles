@@ -45,7 +45,10 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+
+     (auto-completion :variables
+                     auto-completion-tab-key-behavior 'complete)
+
      ;; better-defaults
      emacs-lisp
      git
@@ -54,6 +57,13 @@ This function should only modify configuration layer settings."
      ;; markdown
      multiple-cursors
      yaml
+
+     (go :variables go-backend 'lsp
+         go-tab-width 4
+         go-format-before-save t
+         gofmt-command "goimports")
+
+     (node :variables node-add-modules-path t)
 
      ruby
      ruby-on-rails
@@ -70,13 +80,17 @@ This function should only modify configuration layer settings."
            css-enable-lsp t
            web-fmt-tool 'prettier)
 
-     vue
+     (vue :variables vue-backend 'lsp)
 
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     unicode-fonts
-     treemacs)
+     (unicode-fonts :variables unicode-fonts-enable-ligatures t
+                               unicode-fonts-force-multi-color-on-mac t)
+
+     treemacs
+
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -109,11 +123,6 @@ This function should only modify configuration layer settings."
           :variables ruby-insert-encoding-magic-comment nil
           :variables ruby-backend 'lsp))
 
-  (unicode-fonts :variables unicode-fonts-enable-ligatures t)
-  (unicode-fonts :variables unicode-fonts-force-multi-color-on-mac t)
-  (treemacs :variables treemacs-use-all-the-icons-theme t)
-  (node :variables node-add-modules-path t)
-  (vue :variables vue-backend 'lsp)
   '((javascript :variables node-add-modules-path t
                 :variables js2-mode-show-strict-warnings nil))
   )
@@ -258,9 +267,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(farmhouse-dark
+   dotspacemacs-themes '(spacemacs-dark
                          clues
-                         spacemacs-dark
+                         farmhouse-dark
                          junio
                          soft-morning
                          flatui
@@ -283,7 +292,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Jetbrains Mono"
-                               :size 22.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -317,7 +326,7 @@ It should only modify the values of Spacemacs settings."
    ;; and TAB or `C-m' and `RET'.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
-   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-tab t
 
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
@@ -569,7 +578,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-(setq initial-frame-alist '((top . 30) (left . 300) (width . 120) (height . 81)))
+(setq initial-frame-alist '((top . 30) (left . 300) (width . 110) (height . 33)))
 ;; java/c/c++
 (setq c-basic-offset 4)
 
