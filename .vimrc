@@ -11,6 +11,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 Plug 'rakr/vim-one'
+Plug 'bluz71/vim-moonfly-colors'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
@@ -55,16 +56,17 @@ syntax on
 set termguicolors 
 set background=dark
 let ayucolor="mirage"
-let g:aquarium_style="light"
+let g:aquarium_style="dark"
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:aqua_bold = 1
-colorscheme purify
+let g:aqua_transparency = 1
+colorscheme moonfly
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "purify"
+let g:airline_theme = "moonfly"
 
 
 set number
