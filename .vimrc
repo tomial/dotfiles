@@ -19,6 +19,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'NLKNguyen/papercolor-theme'
 
 " Plug 'jiangmiao/auto-pairs'
 Plug 'raimondi/delimitmate'
@@ -54,20 +55,20 @@ set shiftwidth=2
 
 syntax on
 set termguicolors 
-set background=dark
+set background=light
+set t_Co=256
 let ayucolor="mirage"
 let g:aquarium_style="dark"
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:aqua_bold = 1
 let g:aqua_transparency = 1
-colorscheme moonfly
+colorscheme PaperColor
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "moonfly"
-
+let g:airline_theme = "papercolor"
 
 set number
 " set ttymouse=xterm2
