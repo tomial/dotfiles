@@ -1,0 +1,32 @@
+{
+  "java.home": "/usr/lib/jvm/zulu-11-amd64",
+  "suggest.noselect": false,
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.previewMaxHeight": 6,
+  "signature.hideOnTextChange": true,
+  "signature.target": "echo",
+  "suggest.maxPreviewWidth": 40,
+  "suggest.detailMaxLength": 50,
+  "suggest.labelMaxLength": 40,
+  "suggest.maxCompleteItemCount": 8,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "javascript",
+    "java",
+    "go",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
+  "go.goplsArgs": [
+    "-remote",
+    "auto"
+  ],
+  "go.goplsPath": "$GOBIN/gopls"
+}
