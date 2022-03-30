@@ -10,7 +10,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
-Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'bluz71/vim-moonfly-colors'
 
 Plug 'sheerun/vim-polyglot'
@@ -21,7 +21,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'NLKNguyen/papercolor-theme'
 
-" Plug 'jiangmiao/auto-pairs'
 Plug 'raimondi/delimitmate'
 
 Plug 'mattn/emmet-vim'
@@ -55,20 +54,27 @@ set shiftwidth=2
 
 syntax on
 set termguicolors 
-set background=light
+set background=dark
 set t_Co=256
 let ayucolor="mirage"
 let g:aquarium_style="dark"
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-let g:aqua_bold = 1
-let g:aqua_transparency = 1
-colorscheme PaperColor
+
+let g:tokyonight_style='night' " available: night, storm
+let g:tokyonight_enable_italic=1
+
+let g:aqua_bold=1
+let g:aqua_transparency=1
+
+let g:onedark_hide_endofbuffer=1
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
+
+colorscheme onedark
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme = "papercolor"
+let g:airline_theme='onedark'
 
 set number
 " set ttymouse=xterm2
@@ -80,23 +86,11 @@ filetype indent on
 
 set encoding=UTF-8
 
-" coc.nvim
-source ~/.vim/coc.vim 
-source ~/.vim/vim-go.vim
-
 " fix tmux color issue
  if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-inoremap <silent> <CR> <C-r>=<SID>coc_confirm()<CR>
-function! s:coc_confirm() abort
-  if pumvisible()
-    return coc#_select_confirm()
-  else
-    return "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-  endif
-endfunction
+source $HOME/.vim/keymap.vim
 
-" let &t_ut=''
