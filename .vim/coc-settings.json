@@ -14,7 +14,6 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "html"
   ],
-  "java.home": "/usr/lib/jvm/zulu-11-amd64",
   "suggest.noselect": false,
   "coc.preferences.colorSupport": true,
   "coc.preferences.previewMaxHeight": 6,
