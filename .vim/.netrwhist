@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/aaron/Programming/ruby/project'
+let g:netrw_dirhist_9='/home/xzdai/Programming/go/gfproj/goj/app'
+let g:netrw_dirhist_8='/home/xzdai/Programming/go/gfproj/goj/app/api/hello'
+let g:netrw_dirhist_7='/home/xzdai/.config'
+let g:netrw_dirhist_6='/home/xzdai/Programming/go/tcplite/client'
+let g:netrw_dirhist_5='/home/xzdai/Programming/go/tcplite/tcplite/utils'
+let g:netrw_dirhist_4='/home/xzdai/Programming/go/tcplite/iface'
+let g:netrw_dirhist_3='/home/xzdai/Programming/go/tcplite/net'
+let g:netrw_dirhist_2='/home/xzdai/Programming/go/gin'
+let g:netrw_dirhist_1='/home/xzdai/.cargo'
