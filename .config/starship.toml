@@ -1,0 +1,18 @@
+# Move the directory to the second line
+format = "$all$directory$character"
+
+[character]
+success_symbol = "[➜](purple)"
+error_symbol = "[✖](red)"
+vicmd_symbol = "[❮](green)"
+
+[directory]
+style = "blue"
+truncate_to_repo = false
+
+[cmd_duration]
+style = "yellow"
+
+[python]
+style = "bright-black"
+
