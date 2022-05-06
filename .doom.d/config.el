@@ -20,13 +20,13 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Fira Code" :size 20 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 20)
-      doom-unicode-font (font-spec :family "JetBrainsMono NF" :size 20))
+      doom-variable-pitch-font (font-spec :family "SauceCodePro NF" :size 20)
+      doom-unicode-font (font-spec :family "SauceCodePro NF" :size 20))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-nord-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -55,7 +55,15 @@
 ;; they are implemented.
 
 ;; set init frame size
-(setq initial-frame-alist '((top . 30) (left . 300) (width . 110) (height . 30)))
+(setq initial-frame-alist '((top . 30) (left . 150) (width . 140) (height . 38)))
 
 (after! projectile (setq projectile-project-root-files-bottom-up (remove
             ".git" projectile-project-root-files-bottom-up)))
+
+
+(defun set-bigger-spacing ()
+  (setq-local default-text-properties '(line-spacing 0.25 line-height 1.3)))
+(add-hook 'text-mode-hook 'set-bigger-spacing)
+(add-hook 'prog-mode-hook 'set-bigger-spacing)
+
+(setq +treemacs-git-mode 'deferred)
