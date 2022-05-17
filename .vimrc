@@ -69,12 +69,12 @@ let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
-colorscheme onedark
+colorscheme iceberg
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme='onedark'
+let g:airline_theme='iceberg'
 
 set number
 " set ttymouse=xterm2
@@ -91,3 +91,12 @@ set encoding=UTF-8
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+source $HOME/.vim/keymap.vim
+
+" neovide config
+let g:neovide_cursor_trail_length=0
+let g:neovide_cursor_animation_length=0
+let g:neovide_cursor_antialiasing=v:true
+
+set guifont=SauceCodePro\ NF:h20
