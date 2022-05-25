@@ -96,8 +96,8 @@ endif
 source $HOME/.vim/coc.vim
 
 " neovide config
-let g:neovide_cursor_trail_length=0
-let g:neovide_cursor_animation_length=0
 let g:neovide_cursor_antialiasing=v:true
+let g:neovide_remember_window_size = v:true
+let g:neovide_refresh_rate=60
 
-set guifont=SauceCodePro\ NF:h20
+set guifont=VictorMono\ NF:h20
