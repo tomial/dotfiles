@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugins')
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -10,7 +10,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 Plug 'bluz71/vim-moonfly-colors'
 
 Plug 'sheerun/vim-polyglot'
@@ -27,13 +27,13 @@ Plug 'mattn/emmet-vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'main' }
+
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " HTML live preview
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-
-Plug 'wakatime/vim-wakatime'
-
 
 call plug#end()
 
@@ -69,12 +69,12 @@ let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
-colorscheme iceberg
+colorscheme purify
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme='iceberg'
+let g:airline_theme='purify'
 
 set number
 " set ttymouse=xterm2
@@ -97,7 +97,7 @@ source $HOME/.vim/coc.vim
 
 " neovide config
 let g:neovide_cursor_antialiasing=v:true
-let g:neovide_remember_window_size = v:true
+let g:neovide_remember_window_size=v:true
 let g:neovide_refresh_rate=60
 
-set guifont=VictorMono\ NF:h20
+set guifont=Iosevka:h20
