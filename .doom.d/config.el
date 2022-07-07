@@ -19,14 +19,14 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 20 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "SauceCodePro NF" :size 20)
+(setq doom-font (font-spec :family "Iosevka" :size 20 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Iosevka" :size 20)
       doom-unicode-font (font-spec :family "SauceCodePro NF" :size 20))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-city-lights)
+(setq doom-theme 'doom-horizon)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -58,8 +58,12 @@
 (setq initial-frame-alist '((top . 30) (left . 150) (width . 140) (height . 38)))
 (setq lsp-auto-guess-root nil)
 
-(after! projectile (setq projectile-project-root-files-bottom-up (remove
-            ".git" projectile-project-root-files-bottom-up)))
+(after! projectile (setq projectile-project-root-files-bottom-up
+                         (remove ".git" projectile-project-root-files-bottom-up)))
+(setq projectile-project-search-path '("~/Programming/ruby/project"))
+(setq projectile-auto-discover nil)
+(setq projectile-track-known-projects-automatically nil)
+(setq projectile-ignored-projects '("~/"))
 
 
 (defun set-bigger-spacing ()
