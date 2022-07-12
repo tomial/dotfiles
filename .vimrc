@@ -1,6 +1,12 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+source $HOME/.vim/keymap.vim
+source $HOME/.vim/coc.vim
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" search stuff
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
@@ -37,34 +43,37 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 call plug#end()
 
-" EDITOR_SETTINGS "
+
+""" EDITOR_SETTINGS
+" basic configs
+syntax on
+language zh_CN.UTF-8
+set encoding=UTF-8
+set number
+set mouse=a
+filetype on
+filetype plugin on
+filetype indent on
 
 " On pressing tab, insert 2 spaces
 set expandtab
-
-" show existing tab with 2 spaces width
-set tabstop=2
+set tabstop=2 " tab = 2 space
 set softtabstop=2
+set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
 
-" when indenting with '>', use 2 spaces width
-set shiftwidth=2
-
-syntax on
-set termguicolors 
-set background=dark
+" Themes' variables
 set t_Co=256
+set termguicolors
+set background=dark
 let ayucolor="mirage"
 let g:aquarium_style="dark"
-
 let g:tokyonight_style='night' " available: night, storm
 let g:tokyonight_enable_italic=1
-
 let g:aqua_bold=1
 let g:aqua_transparency=1
-
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
@@ -76,28 +85,8 @@ colorscheme purify
 "   base16_aquarium_dark
 let g:airline_theme='purify'
 
-set number
-" set ttymouse=xterm2
-set mouse=a
-" EDITOR_SETTINGS "
-filetype on
-filetype plugin on
-filetype indent on
-
-set encoding=UTF-8
-
 " fix tmux color issue
  if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
-
-" source $HOME/.vim/keymap.vim
-source $HOME/.vim/coc.vim
-
-" neovide config
-let g:neovide_cursor_antialiasing=v:true
-let g:neovide_remember_window_size=v:true
-let g:neovide_refresh_rate=60
-
-set guifont=Iosevka:h20

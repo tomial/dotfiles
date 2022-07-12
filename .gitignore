@@ -1,3 +1,4 @@
 /.vim/autoload/**
 /.vim/plugins/**
 /.vim/plugged/**
+/.config/nvim/autoload/**
