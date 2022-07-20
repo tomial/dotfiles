@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "CaskaydiaCove Nerd Font" :size 20 :weight 'regular)
+(setq doom-font (font-spec :family "Fira Code" :size 20 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "CaskaydiaCove Nerd Font" :size 20)
       doom-unicode-font (font-spec :family "SauceCodePro NF" :size 20))
 
@@ -64,6 +64,9 @@
 (setq projectile-auto-discover nil)
 (setq projectile-track-known-projects-automatically nil)
 (setq projectile-ignored-projects '("~/"))
+
+;; format on save modes
+(setq +format-on-save-enabled-modes '(rustic-mode))
 
 
 (defun set-bigger-spacing ()
