@@ -7,11 +7,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " search stuff
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 
-" Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-endwise'
 
+" Themes
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
@@ -90,3 +91,6 @@ let g:airline_theme='purify'
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+" sneak label
+let g:sneak#label = 1

@@ -18,7 +18,7 @@ fish_add_path $GOPATH
 fish_add_path $GOBIN
 fish_add_path /usr/sbin
 
-alias nvim "neovide --multigrid"
+alias nv "neovide --multigrid"
 alias ls "lsd"
 alias ll "lsd -l"
 alias la "lsd -a"
