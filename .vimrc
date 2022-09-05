@@ -37,6 +37,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'arcticicestudio/nord-vim', { 'branch': 'main' }
 
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
