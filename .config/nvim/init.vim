@@ -13,5 +13,6 @@ let g:neovide_input_macos_alt_is_meta=v:true
 let g:neovide_scroll_animation_length = 0.1
 let g:neovide_floating_blur_amount_x = 2.0
 let g:neovide_floating_blur_amount_y = 2.0
+let g:neovide_transparency=0.8
 
 set guifont=JetBrainsMono\ NF:h18

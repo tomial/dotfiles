@@ -19,22 +19,22 @@ Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'main' }
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ryanoasis/vim-devicons'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'raimondi/delimitmate'
 
 Plug 'mattn/emmet-vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-Plug 'arcticicestudio/nord-vim', { 'branch': 'main' }
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -71,7 +71,7 @@ autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
 " Themes' variables
 set t_Co=256
 set termguicolors
-set background=dark
+set background=light
 let ayucolor="mirage"
 let g:aquarium_style="dark"
 let g:tokyonight_style='night' " available: night, storm
@@ -82,12 +82,12 @@ let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
-colorscheme purify
+colorscheme PaperColor
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme='purify'
+let g:airline_theme='papercolor'
 
 " fix tmux color issue
  if exists('+termguicolors')
