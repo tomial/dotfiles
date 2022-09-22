@@ -71,7 +71,7 @@ autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
 " Themes' variables
 set t_Co=256
 set termguicolors
-set background=light
+set background=dark
 let ayucolor="mirage"
 let g:aquarium_style="dark"
 let g:tokyonight_style='night' " available: night, storm
@@ -82,12 +82,12 @@ let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
-colorscheme PaperColor
+colorscheme purify
 " let g:airline_theme = "ayu"
 " " aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme='papercolor'
+let g:airline_theme='purify'
 
 " fix tmux color issue
  if exists('+termguicolors')
@@ -101,3 +101,5 @@ let g:sneak#label = 1
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+let g:fzf_preview_window = ['right,40%', 'ctrl-\']
