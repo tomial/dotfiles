@@ -1,5 +1,6 @@
 " vim/nvim shared config
 source ~/.vimrc
+source $HOME/.config/nvim/keymaps.vim
 
 lua require('init')
 
