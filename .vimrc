@@ -9,16 +9,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 
-" [NVIM ONLY] Lua Plugins 
+" [NVIM ONLY Lua Plugins ]
 Plug 'windwp/nvim-autopairs'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " [ END ]
 
 Plug 'machakann/vim-sandwich'
-Plug 'tpope/vim-endwise'
 
 " Themes
-" Plug 'ghifarit53/tokyonight-vim'
-
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " Avaialble options:
 " colorscheme tokyonight
@@ -26,7 +27,6 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " colorscheme tokyonight-storm
 " colorscheme tokyonight-day
 " colorscheme tokyonight-moon
-
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }

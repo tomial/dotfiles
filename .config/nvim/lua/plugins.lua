@@ -18,3 +18,10 @@ require("nvim-tree").setup({
 })
 
 require("nvim-autopairs").setup {}
+
+require("toggleterm").setup {
+  direction = 'float',
+  float_opts = {
+    border = 'curved'
+  }
+}
