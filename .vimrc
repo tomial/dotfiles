@@ -9,11 +9,24 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 
+" [NVIM ONLY] Lua Plugins 
+Plug 'windwp/nvim-autopairs'
+" [ END ]
+
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-endwise'
 
 " Themes
-Plug 'ghifarit53/tokyonight-vim'
+" Plug 'ghifarit53/tokyonight-vim'
+
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Avaialble options:
+" colorscheme tokyonight
+" colorscheme tokyonight-night
+" colorscheme tokyonight-storm
+" colorscheme tokyonight-day
+" colorscheme tokyonight-moon
+
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
@@ -25,8 +38,7 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -69,13 +81,13 @@ autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
 
 " Themes' variables
-set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 set termguicolors
 set background=dark
 let ayucolor="mirage"
 let g:aquarium_style="dark"
-let g:tokyonight_style='night' " available: night, storm
-let g:tokyonight_enable_italic=1
 let g:aqua_bold=1
 let g:aqua_transparency=1
 let g:onedark_hide_endofbuffer=1
@@ -83,11 +95,11 @@ let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
 colorscheme purify
-" let g:airline_theme = "ayu"
-" " aquarium options:
+set laststatus=2
+let g:lightline = {'colorscheme': 'purify'}
+" aquarium options:
 "   base16_aquarium_light
 "   base16_aquarium_dark
-let g:airline_theme='purify'
 
 " fix tmux color issue
  if exists('+termguicolors')

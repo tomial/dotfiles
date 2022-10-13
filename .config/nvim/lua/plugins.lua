@@ -16,3 +16,5 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+require("nvim-autopairs").setup {}
