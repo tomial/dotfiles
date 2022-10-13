@@ -22,11 +22,11 @@ Plug 'machakann/vim-sandwich'
 " Themes
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " Avaialble options:
-" colorscheme tokyonight
-" colorscheme tokyonight-night
-" colorscheme tokyonight-storm
-" colorscheme tokyonight-day
-" colorscheme tokyonight-moon
+" tokyonight
+" tokyonight-night
+" tokyonight-storm
+" tokyonight-day
+" tokyonight-moon
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
@@ -58,7 +58,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 call plug#end()
-
 
 """ EDITOR_SETTINGS
 " basic configs

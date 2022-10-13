@@ -1,0 +1,39 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  f_vimrc:
+    src: .vimrc
+    dst: ~/.vimrc
+  d_vim:
+    src: .vim
+    dst: ~/.vim
+  d_doom_d:
+    src: .doom.d
+    dst: ~/.doom.d
+  f_spacemacs:
+    src: .spacemacs
+    dst: ~/.spacemacs
+  d_nvim:
+    src: .config/nvim
+    dst: ~/.config/nvim
+  d_linux_fish:
+    src: .config/fish
+    dst: ~/.config/fish
+  f_starship:
+    src: .config/starship.toml
+    dst: ~/.config/starship.toml
+  f_mac_fish_conf:
+    src: mac/config.fish
+    dst: ~/.config/fish/config.fish
+profiles:
+  Aarons-Mac-mini.local:
+    dotfiles:
+    - f_vimrc
+    - d_vim
+    - d_doom_d
+    - f_spacemacs
+    - d_nvim
+    - f_starship
+    - f_mac_fish_conf

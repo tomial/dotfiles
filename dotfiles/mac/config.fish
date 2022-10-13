@@ -9,18 +9,20 @@ set GOPATH "$HOME/go"
 set GOBIN "$GOPATH/bin"
 set GOPROXY "https://goproxy.io,direct"
 set NNN_BMS "r:$HOME/Programming/ruby;h:$HOME;p:$HOME/Programming;i:$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-set JAVA_HOME "/usr/local/opt/openjdk@8/"
+set JAVA_HOME "/usr/local/opt/openjdk@17/"
 set -Ux NNN_PLUG 'p:preview-tui;t:preview-tabbed'
 set -Ux EDITOR 'nvim'
-set -Ux TERMINAL 'tabby'
 set -Ux SPLIT "v"
 set -Ux REDO_HISTORY_PATH "$HOME"
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -Ux TERMINAL 'iterm'
+set RACKET_PATH "/Applications/Racket v8.6/bin"
 #set -Ux all_proxy "socks5://127.0.0.1:7890"
 #set -Ux http_proxy "socks5://127.0.0.1:7890"
 #set -Ux https_proxy "socks5://127.0.0.1:7890"
 
 fish_add_path "$HOME/.rbenv/bin"
+fish_add_path /usr/local/opt/openjdk@17/bin
 fish_add_path "/usr/local/bin"
 fish_add_path "/usr/local/opt/mysql@5.7/bin"
 fish_add_path "/usr/local/opt/elasticsearch@5.6/bin"
@@ -31,6 +33,9 @@ fish_add_path "/usr/local/opt/openjdk/bin"
 fish_add_path "$HOME/.emacs.d/bin"
 fish_add_path "$HOME/.cargo/bin/"
 fish_add_path $GOBIN
+fish_add_path $RACKET_PATH
+fish_add_path /Users/aaron/vcpkg
+fish_add_path $HOME/.local/nvim/bin
 
 eval (starship init fish)
 zoxide init fish | source
