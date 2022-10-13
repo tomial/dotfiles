@@ -114,4 +114,4 @@ highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
-let g:fzf_preview_window = ['right,40%', 'ctrl-\']
+let g:fzf_preview_window = ['hidden,right,40%', 'ctrl-\']
