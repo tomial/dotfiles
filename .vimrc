@@ -12,7 +12,7 @@ Plug 'justinmk/vim-sneak'
 " [NVIM ONLY Lua Plugins ]
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+" Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " [ END ]
