@@ -1,8 +1,22 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-source $HOME/.vim/keymap.vim
-source $HOME/.vim/coc.vim
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+if has('nvim')
+  function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+  endfunction
+
+  Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+else
+  Plug 'gelguy/wilder.nvim'
+
+  " To use Python remote plugin features in Vim, can be skipped
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " search stuff
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -79,38 +93,13 @@ set shiftwidth=2 " when indenting with '>', use 2 spaces width
 autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 expandtab
 
-" Themes' variables
-if !has('gui_running')
-  set t_Co=256
-endif
-set termguicolors
-set background=dark
-let ayucolor="mirage"
-let g:aquarium_style="dark"
-let g:aqua_bold=1
-let g:aqua_transparency=1
-let g:onedark_hide_endofbuffer=1
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
-
-colorscheme purify
-set laststatus=2
-let g:lightline = {'colorscheme': 'purify'}
-" aquarium options:
-"   base16_aquarium_light
-"   base16_aquarium_dark
-
 " fix tmux color issue
  if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" sneak label
-let g:sneak#label = 1
-
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-
-let g:fzf_preview_window = ['hidden,right,40%', 'ctrl-\']
+source $HOME/.vim/themes.vim
+source $HOME/.vim/plugins.vim
+source $HOME/.vim/keymap.vim
+source $HOME/.vim/coc.vim
