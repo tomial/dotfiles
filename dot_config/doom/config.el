@@ -125,13 +125,10 @@
 
 (map! :i "TAB" #'tab-to-tab-stop)
 
-;; (setq shell-file-name (executable-find "bash"))
-;;(after! counsel
-;;  (setq counsel-rg-base-command "rg -M 240 --with-filename --no-heading --line-number --color never %s || true"))
-
-;; Set Ruff For Python
+;; [python LSP]
+;; use ruff as formatter
 (after! python
-  (set-formatter! 'ruff '("ruff" "format" "--stdin-filename" "%f" "-") :modes '(python-mode python-ts-mode)))
-
-;; 确保 ruff-lsp 已经在你的 $PATH 中 (pip install ruff-lsp)
-(setq lsp-python-ruff-lsp-server-command '("ruff-lsp"))
+  (set-formatter! 'ruff '("ruff" "format" "-") :modes '(python-mode python-ts-mode)))
+;; eglot调高ty优先级
+(after! python
+  (set-eglot-client! '(python-mode python-ts-mode) '("ty" "server")))
