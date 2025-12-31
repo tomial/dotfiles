@@ -1,8 +1,10 @@
 return {
 	{
 		"wadackel/vim-dogrun",
-		config = function()
-			vim.cmd.colorscheme("dogrun")
-		end,
 	},
+  { "savq/melange-nvim",
+		config = function()
+			vim.cmd.colorscheme("melange")
+		end
+  }
 }
