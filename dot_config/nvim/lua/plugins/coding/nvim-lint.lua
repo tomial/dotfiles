@@ -6,13 +6,24 @@ return {
 			linters_by_ft = {
 				go = { "staticcheck" },
 				lua = { "luacheck" },
+        typescript = { "biomejs" },
+        typescriptreact = { "biomejs" },
+        javascript = { "biomejs" },
+        javascriptreact = { "biomejs" },
+        json = { "biomejs" },
+        jsonc = { "biomejs" },
 				-- Use the "*" filetype to run linters on all filetypes.
 				-- ['*'] = { 'global linter' },
 				-- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
 				-- ['_'] = { 'fallback linter' },
 				-- ["*"] = { "typos" },
 			},
-			linters = {},
+      linters = {
+        -- 覆盖 biomejs 的 cmd，强制使用 Mason 安装的 biome
+        biomejs = {
+          cmd = "biome",
+        },
+      },
 		},
 		config = function(_, opts)
 			local M = {}
