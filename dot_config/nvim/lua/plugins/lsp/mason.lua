@@ -22,6 +22,7 @@ return {
 				"ts_ls",
 				"html",
 				"tailwindcss",
+				"c3-lsp"
 			},
 		},
 		dependencies = {
