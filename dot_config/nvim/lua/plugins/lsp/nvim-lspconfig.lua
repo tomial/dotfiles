@@ -20,8 +20,9 @@ return {
 				pattern = { "c3", "c3i", "c3t" },
 				callback = function()
 					vim.lsp.enable("c3_lsp")
+					vim.treesitter.start()
 				end,
-				desc = "Auto-start c3 LSP server",
+				desc = "Auto-start c3 LSP server and Tree-sitter",
 			})
 		end,
 	},
