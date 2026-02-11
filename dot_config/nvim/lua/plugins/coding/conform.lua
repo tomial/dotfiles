@@ -19,7 +19,7 @@ return {
       },
       format_on_save = function(bufnr)
         -- 跳过以下文件类型的自动格式化
-        local disable_filetypes = { "c" }
+        local disable_filetypes = { "c", "cpp" }
         if vim.tbl_contains(disable_filetypes, vim.bo[bufnr].filetype) then
           return
         end
