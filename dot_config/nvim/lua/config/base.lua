@@ -17,24 +17,11 @@ vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 vim.opt.fileformats = { "unix", "dos" }
 vim.g.mapleader = " "
--- laggggggggggg
--- vim.g.clipboard = {
--- 	name = "WslClipboard",
--- copy = {
--- 	["+"] = "win32yank -i --crlf",
--- 	["*"] = "win32yank -i --crlf",
--- },
--- 	paste = {
--- 		["+"] = "win32yank -o --lf",
--- 		["*"] = "win32yank -o --lf",
--- 	},
--- 	cache_enabled = 0,
--- }
 
 -- save on format
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = { "*.go", "*.rs", "*.lua" },
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+  pattern = { "*.go", "*.rs", "*.lua" },
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })

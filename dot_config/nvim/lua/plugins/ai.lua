@@ -44,7 +44,7 @@ return {
     opts = {
       -- NOTE: The log_level is in `opts.opts`
       opts = {
-        log_level = "TRACE", -- or "TRACE"
+        log_level = "TRACE",
         language = "中文"
       },
       interactions = {
@@ -76,7 +76,8 @@ return {
           enabled = true,
           provider = "float"
         }
-      }
+      },
+      auto_approve = false,
     }
   }
 }
