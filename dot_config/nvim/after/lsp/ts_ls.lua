@@ -1,7 +1,9 @@
 return {
 	filetypes = {
 		"javascript",
+		"javascriptreact",
 		"typescript",
+		"typescriptreact",
 		"json",
 		"vue",
 	},
