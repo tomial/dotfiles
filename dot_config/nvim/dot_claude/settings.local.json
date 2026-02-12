@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__acp__Edit",
+      "WebFetch(domain:codecompanion.olimorris.dev)",
+      "WebFetch(domain:github.com)",
+      "mcp__MiniMax__web_search",
+      "mcp__MiniMax__understand_image"
+    ]
+  }
+}
