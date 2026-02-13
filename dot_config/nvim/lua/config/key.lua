@@ -1,5 +1,6 @@
 -- daily shortcut
-vim.keymap.set("n", "<leader>bd", ":bd<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q", ":qa!<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bd", ":bd!<CR>", { silent = true })
 vim.keymap.set("n", "<leader>N", ":noh<CR>", { silent = true })
 
 -- fzf

@@ -1,5 +1,8 @@
-vim.keymap.set("n", "<leader>cc", ":CodeCompanionChat<CR>")
-vim.keymap.set("v", "<leader>cc", ":'<,'>CodeCompanionChat Add<CR>", { desc = "Add selection to chat" })
+vim.keymap.set("n", "<leader>cca", ":CodeCompanionActions<CR>")
+vim.keymap.set("n", "<leader>cc", ":CodeCompanion<CR>")
+vim.keymap.set("n", "<leader>ccc", ":CodeCompanionChat<CR>")
+vim.keymap.set("v", "<leader>ca", ":'<,'>CodeCompanionChat Add<CR>", { desc = "Add selection to chat" })
+vim.keymap.set("v", "<leader>cc", ":'<,'>CodeCompanion<CR>")
 vim.keymap.set("n", "<leader>pi", ":PasteImage<CR>")
 
 return {
@@ -40,44 +43,50 @@ return {
           },
         },
       },
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = { "markdown", "codecompanion" }
+      },
+      {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        opts = {
+          preview = {
+            filetypes = { "markdown", "codecompanion" },
+            ignore_buftypes = {},
+          },
+        },
+      }
     },
     opts = {
-      -- NOTE: The log_level is in `opts.opts`
       opts = {
         log_level = "TRACE",
-        language = "中文"
+        language = "Simplified Chinese 简体中文"
       },
       interactions = {
         chat = {
           adapter = {
             name = "claude_code",
-            model = "MiniMax-M2.1",
-          }
+            model = "MiniMax-M2.5",
+          },
         },
         inline = {
           keymaps = {
             accept_change = {
-              modes = { n = "gda" }, -- Remember this as DiffAccept
+              modes = { n = "ccy" }, -- Remember this as DiffAccept
             },
             reject_change = {
-              modes = { n = "gdr" }, -- Remember this as DiffReject
+              modes = { n = "ccn" }, -- Remember this as DiffReject
             },
             always_accept = {
-              modes = { n = "gdy" }, -- Remember this as DiffYolo
+              modes = { n = "cca" }, -- Remember this as DiffYolo
             },
           },
         }
       },
       adapters = {
-        claude_code = "acp", -- Claude Code (ACP 协议)
+        claude_code = "acp",
       },
-      display = {
-        diff = {
-          enabled = true,
-          provider = "float"
-        }
-      },
-      auto_approve = false,
     }
   }
 }
