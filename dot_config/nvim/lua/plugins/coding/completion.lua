@@ -49,7 +49,16 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<TAB>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<TAB>"] = function(fallback)
+            local copilot_suggestion = require("copilot.suggestion")
+            if copilot_suggestion.is_visible() then
+              copilot_suggestion.accept()
+            elseif cmp.visible() then
+              cmp.confirm({ select = false })
+            else
+              fallback()
+            end
+          end,
         }),
         sources = cmp.config.sources(
           {

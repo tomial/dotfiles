@@ -6,6 +6,7 @@ return {
 			linters_by_ft = {
 				go = { "staticcheck" },
 				lua = { "luacheck" },
+        python = { "ruff" },
         typescript = { "biomejs" },
         typescriptreact = { "biomejs" },
         javascript = { "biomejs" },

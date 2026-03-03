@@ -1,6 +1,6 @@
 vim.cmd("syntax enable")
 -- 设置 Neovim 消息语言为中文 (可选, 更推荐通过环境变量 LANG)
--- vim.cmd('language zh_CN.UTF-8')
+-- zh vim.cmd('language_CN.UTF-8')
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -12,7 +12,7 @@ vim.opt.shiftwidth = 2
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 
-vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+vim.opt.clipboard:append({ "unnamedplus" })
 -- vim.opt.clipboard = ""
 
 vim.opt.fileformats = { "unix", "dos" }

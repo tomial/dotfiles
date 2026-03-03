@@ -22,6 +22,7 @@ return {
         "ts_ls",
         "html",
         "tailwindcss",
+        "pyright",
       },
     },
     dependencies = {

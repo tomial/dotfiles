@@ -14,9 +14,8 @@ return {
     opts = {
       suggestion = {
         auto_trigger = true,
-        debounce = 200,
+        debounce = 1000,
         keymap = {
-          accept = "<TAB>",
           accept_word = false,
           accept_line = false,
           next = "<M-]>",

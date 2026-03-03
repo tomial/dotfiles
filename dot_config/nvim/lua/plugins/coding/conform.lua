@@ -9,6 +9,7 @@ return {
         -- Conform will run the first available formatter
         rust = { "rustfmt", lsp_format = "fallback" },
         go = { "gofmt" },
+        python = { "ruff_format" },
         vue = { "prettier", "prettierd" },
         javascript = { "biome" },
         typescript = { "biome" },

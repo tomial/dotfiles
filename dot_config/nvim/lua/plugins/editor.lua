@@ -5,20 +5,28 @@ return {
     lazy = true,
     opts = {
       signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
+        add = { text = "▎", hl = "GitSignsAdd" },
+        change = { text = "▎", hl = "GitSignsChange" },
+        delete = { text = "", hl = "GitSignsDelete" },
+        topdelete = { text = "", hl = "GitSignsDelete" },
+        changedelete = { text = "▎", hl = "GitSignsChange" },
+        untracked = { text = "▎", hl = "GitSignsAdd" },
       },
       signs_staged = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
+        add = { text = "▎", hl = "GitSignsStagedAdd" },
+        change = { text = "▎", hl = "GitSignsStagedChange" },
+        delete = { text = "", hl = "GitSignsStagedDelete" },
+        topdelete = { text = "", hl = "GitSignsStagedDelete" },
+        changedelete = { text = "▎", hl = "GitSignsStagedChange" },
       },
+      signcolumn = true,
+      numhl = false,
+      linehl = false,
+      watch_gitdir = {
+        interval = 1000,
+        follow_files = true,
+      },
+      current_line_blame = false,
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
 
@@ -53,11 +61,5 @@ return {
   },
   {
     "tpope/vim-fugitive",
-  },
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
   }
 }
