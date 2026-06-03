@@ -34,9 +34,42 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     lazy = false,
+    keys = {
+      { "<leader>fe", "<cmd>NvimTreeToggle<CR>", desc = "Toggle nvim-tree" },
+      { "<leader>fE", "<cmd>NvimTreeFindFile<CR>", desc = "Find file in nvim-tree" },
+    },
     opts = {
-      vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>", { noremap = true, silent = true }),
-      vim.keymap.set("n", "<leader>fE", ":NvimTreeFindFile<CR>", { noremap = true, silent = true }),
+      on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+
+        api.config.mappings.default_on_attach(bufnr)
+
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        -- h: collapse open folder, or go to parent directory (cursor movement, not cd)
+        vim.keymap.set("n", "h", function()
+          local node = api.tree.get_node_under_cursor()
+          if not node or node.name == ".." then return end
+          if node.nodes and node.open then
+            api.node.open.edit()
+          else
+            api.node.navigate.parent()
+          end
+        end, opts("Parent / Collapse"))
+
+        -- l: expand folder, or open file
+        vim.keymap.set("n", "l", function()
+          local node = api.tree.get_node_under_cursor()
+          if not node or node.name == ".." then return end
+          if node.nodes and not node.open then
+            api.node.open.edit()
+          elseif not node.nodes then
+            api.node.open.edit()
+          end
+        end, opts("Open / Expand"))
+      end,
     },
   },
   {
