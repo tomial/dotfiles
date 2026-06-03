@@ -20,9 +20,25 @@ vim.keymap.set("n", "gr", ":FzfLua lsp_references<CR>", { silent = true })
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 vim.keymap.set("n", "<leader>o", function()
-  local path = vim.fn.expand("%:p:h")
+  local path
+  -- Check if we're in nvim-tree and get the node under cursor
+  local ok, api = pcall(require, "nvim-tree.api")
+  if ok then
+    local node = api.tree.get_node_under_cursor()
+    if node and node.absolute_path then
+      path = node.absolute_path
+    end
+  end
+  -- Fallback: use current buffer's directory
+  if not path then
+    path = vim.fn.expand("%:p:h")
+  end
+  -- If path is a file, open its parent directory; if it's a directory, open it directly
+  if vim.fn.isdirectory(path) == 0 then
+    path = vim.fn.fnamemodify(path, ":h")
+  end
   vim.ui.open(path)
-end, { desc = "Open current file's folder in finder" })
+end, { desc = "Open selected file/folder's directory in finder" })
 
 -- create format command
 vim.api.nvim_create_user_command("Format", function(args)
