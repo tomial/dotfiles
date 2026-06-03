@@ -39,6 +39,7 @@ return {
       { "<leader>fE", "<cmd>NvimTreeFindFile<CR>", desc = "Find file in nvim-tree" },
     },
     opts = {
+      view = { side = "right" },
       on_attach = function(bufnr)
         local api = require("nvim-tree.api")
 
