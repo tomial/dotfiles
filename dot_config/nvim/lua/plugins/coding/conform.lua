@@ -11,12 +11,12 @@ return {
         go = { "gofmt" },
         python = { "ruff_format" },
         vue = { "prettier", "prettierd" },
-        javascript = { "biome" },
-        typescript = { "biome" },
-        javascriptreact = { "biome" },
-        typescriptreact = { "biome" },
-        json = { "biome" },
-        css = { "biome" }
+        javascript = { "oxfmt" },
+        typescript = { "oxfmt" },
+        javascriptreact = { "oxfmt" },
+        typescriptreact = { "oxfmt" },
+        json = { "oxfmt" },
+        css = { "oxfmt" }
       },
       format_on_save = function(bufnr)
         -- 跳过以下文件类型的自动格式化
