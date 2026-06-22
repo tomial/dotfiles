@@ -4,6 +4,12 @@ return {
   },
   {
     "savq/melange-nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.background = "light"
+      vim.cmd.colorscheme("melange")
+    end,
   },
   {
     "catppuccin/nvim",
@@ -14,10 +20,10 @@ return {
       transparent_background = true,
       auto_integrations = true,
     },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
-    end
+    -- config = function(_, opts)
+    --   require("catppuccin").setup(opts)
+    --   vim.cmd.colorscheme("catppuccin")
+    -- end
   },
   {
     "oskarnurm/koda.nvim",
